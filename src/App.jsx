@@ -45,14 +45,27 @@ class App extends Component {
       return { contacts: updatedContacts };
     });
   };
-  deleteContact = contactName => {
+  deleteContact = e => {
+    const deletedContactName = e.target.id;
     for (let contactInState of this.state.contacts) {
-      if (contactName.toLowerCase() === contactInState.name.toLowerCase()) {
-        return alert(`${contactName} is deleted.`);
+      if (
+        deletedContactName.toLowerCase() !== contactInState.name.toLowerCase()
+      ) {
+        this.setState(prevState => {
+          let updatedContacts = [...prevState.contacts];
+
+          updatedContacts.push(contactInState);
+
+          return { contacts: updatedContacts };
+        });
       }
+      // for (let contactInState of this.state.contacts) {
+      //   if (contactName.toLowerCase() === contactInState.name.toLowerCase()) {
+      //     return alert(`${contactName} is deleted.`);
+      //   }
+      // }
     }
   };
-
   render() {
     return (
       <div
@@ -64,6 +77,7 @@ class App extends Component {
           fontSize: 40,
           color: '#010101',
           flexDirection: 'column',
+          padding: '50px',
         }}
       >
         <h1>Phonebook</h1>
