@@ -7,7 +7,7 @@ const Contacts = ({ contactsList, onDelete }) => {
       {contactsList.map(contact => {
         return (
           <li key={nanoid()}>
-            {contact.name} - {contact.number}
+            {contact.name}: {contact.number}
             <button className="deleteBtn" onClick={onDelete} id={contact.name}>
               Delete
             </button>

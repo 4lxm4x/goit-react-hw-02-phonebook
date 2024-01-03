@@ -11,4 +11,20 @@
 .contactInput {
   width: auto;
   margin: 10px;
+  &:focus {
+    outline: 1px solid blue;
+    transform: scale(1.05);
+    transition: 300ms;
+  }
+}
+
+button {
+  background-color: #fff;
+  border: 1px solid grey;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  &:hover {
+    background-color: lightblue;
+  }
 }

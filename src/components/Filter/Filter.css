@@ -1,0 +1,5 @@
+.filter:focus {
+  outline: 1px solid blue;
+  transform: scale(1.05);
+  transition: 300ms;
+}

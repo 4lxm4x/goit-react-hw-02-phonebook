@@ -2,7 +2,7 @@ import { Component } from 'react';
 import ContactForm from 'components/ContactForm/ContactForm';
 import Contacts from 'components/Contacts/Contacts';
 import Filter from './components/Filter/Filter';
-import { nanoid } from 'nanoid';
+import './App.css';
 
 class App extends Component {
   state = {
@@ -62,18 +62,7 @@ class App extends Component {
   };
   render() {
     return (
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101',
-          flexDirection: 'column',
-          padding: '50px',
-        }}
-      >
+      <div className="mainDiv">
         <h1>Phonebook</h1>
         <ContactForm onFormSubmit={this.onHandleFormSubmit} />
         <h1>Contacts</h1>

@@ -39,6 +39,7 @@ class ContactForm extends Component {
         <label htmlFor="name">Name</label>
         <input
           type="text"
+          id="name"
           className="contactInput"
           placeholder="Plase input your name"
           name="name"
@@ -51,6 +52,7 @@ class ContactForm extends Component {
 
         <input
           type="tel"
+          id="number"
           className="contactInput"
           placeholder="Please input your phone number"
           name="number"
