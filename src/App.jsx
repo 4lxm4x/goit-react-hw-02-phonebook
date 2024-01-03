@@ -45,26 +45,20 @@ class App extends Component {
       return { contacts: updatedContacts };
     });
   };
+
   deleteContact = e => {
     const deletedContactName = e.target.id;
+    let updatedContacts = [];
     for (let contactInState of this.state.contacts) {
       if (
         deletedContactName.toLowerCase() !== contactInState.name.toLowerCase()
       ) {
-        this.setState(prevState => {
-          let updatedContacts = [...prevState.contacts];
-
-          updatedContacts.push(contactInState);
-
-          return { contacts: updatedContacts };
-        });
+        updatedContacts.push(contactInState);
       }
-      // for (let contactInState of this.state.contacts) {
-      //   if (contactName.toLowerCase() === contactInState.name.toLowerCase()) {
-      //     return alert(`${contactName} is deleted.`);
-      //   }
-      // }
     }
+    this.setState(() => {
+      return { contacts: updatedContacts };
+    });
   };
   render() {
     return (

@@ -2,12 +2,9 @@ import './Contacts.css';
 import { nanoid } from 'nanoid';
 
 const Contacts = ({ contactsList, onDelete }) => {
-  console.log('🚀 ~ contactsList:', contactsList);
-
   return (
     <ul>
       {contactsList.map(contact => {
-        console.log('🚀 ~ contact:', contact);
         return (
           <li key={nanoid()}>
             {contact.name} - {contact.number}
